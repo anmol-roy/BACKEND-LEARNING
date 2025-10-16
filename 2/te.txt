@@ -1,0 +1,14 @@
+node.js basics
+introduction
+installing node.js and npm
+
+node & npm 
+npm init -> package.json
+fs
+writefile
+copy file
+rename
+unlink
+appendfile
+working with node and npm
+npm init

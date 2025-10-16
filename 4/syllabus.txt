@@ -1,0 +1,12 @@
+Express.js Framework:
+Introduction to Express.js.
+it's a Framework
+->manages everything from receiving the request and giving the response
+
+express ja ek npm package handling
+Setting up a basic Express application.
+Routing.
+Request and response handling.
+
+Middleware.
+Error handling.
