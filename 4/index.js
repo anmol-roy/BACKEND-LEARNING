@@ -5,5 +5,5 @@ app.get( '/' , function ( req, res){
     res.send('Hello Worl    d!');
 }
 
-)
+);
 app.listen(3000)
