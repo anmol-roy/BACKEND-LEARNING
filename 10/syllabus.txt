@@ -1,0 +1,14 @@
+dataa storage:
+ aisa kuchh jaha par hum saare users ki info store kar sskte hai
+ database->
+types of dbs
+sql | nosql
+SQL -> data store in a schema -> all attributes conneacted t
+NOSQL -> mongoDB -> data stores in object form
+ - {
+
+   }
+what and why
+
+
+terminologies: - collections , documents, schemas, keys, models
