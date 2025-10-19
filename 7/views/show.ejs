@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= filename.replace('.txt', '') %> - Task Details</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-zinc-900 text-gray-100 font-sans p-10">
 
-    <div class="main w-full min-h-screen bg-zinc-900 p-10" >
-        <a class="text-blue-400 mb-10" href="/">Go back to home</a>
-        <h1 class="text-3xl tracling-tighter" > file ka name  </h1>
-        <p  class="text-xl mt-2" >  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, mollitia. </p>
+  <div class="max-w-2xl mx-auto bg-zinc-800 p-6 rounded-2xl shadow-lg">
+    <h1 class="text-2xl font-semibold mb-4 text-blue-400"><%= filename.replace('.txt', '') %></h1>
+    <p class="whitespace-pre-wrap text-gray-300 mb-6"><%= filedata %></p>
+    <a href="/" class="text-blue-500 hover:text-blue-300">← Back to All Tasks</a>
+  </div>
 
-    </div>
-    
 </body>
 </html>

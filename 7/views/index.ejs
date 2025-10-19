@@ -37,20 +37,26 @@
 
     <!-- Tasks Section -->
     <div class="w-full max-w-3xl mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-  <% if (files && files.length > 0) { %>
-    <% files.forEach(function(file) { %>
-      <div class="tasks space-y-2 p-5 bg-zinc-800 rounded-xl shadow-lg hover:shadow-blue-500/10 transition-shadow">
-        <h1 class="text-white text-lg font-medium"><%= file.replace('.txt', '') %></h1>
-        <a href="/file/<%= file %>" class="text-blue-400 hover:text-blue-300 text-sm">Read more →</a>
-      </div>
-    <% }); %>
-  <% } else { %>
-    <div class="tasks space-y-2 p-5 bg-zinc-800 rounded-xl shadow-lg hover:shadow-blue-500/10 transition-shadow text-center">
-      <h1 class="text-white text-lg font-medium">No Task Yet</h1>
-      <a href="#" class="text-blue-400 hover:text-blue-300 text-sm">Create One →</a>
+      <% if (files && files.length > 0) { %>
+        <% files.forEach(function(file) { %>
+          <div class="tasks space-y-2 p-5 bg-zinc-800 rounded-xl shadow-lg hover:shadow-blue-500/10 transition-shadow">
+            <h1 class="text-white text-lg font-medium"><%= file.replace('.txt', '') %></h1>
+            <div class="flex justify-between items-center">
+              <a href="/file/<%= file %>" class="text-blue-400 hover:text-blue-300 text-sm">Read more →</a>
+              <a href="/edit/<%= file %>" class="text-blue-400 hover:text-blue-300 text-sm underline">✏️ Edit</a>
+              <form action="/delete/<%= file %>" method="POST" class="inline">
+                <button type="submit" class="text-red-500 hover:text-red-400 text-sm ml-2">🗑️ Delete</button>
+              </form>
+            </div>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <div class="tasks space-y-2 p-5 bg-zinc-800 rounded-xl shadow-lg hover:shadow-blue-500/10 transition-shadow text-center">
+          <h1 class="text-white text-lg font-medium">No Task Yet</h1>
+          <a href="#" class="text-blue-400 hover:text-blue-300 text-sm">Create One →</a>
+        </div>
+      <% } %>
     </div>
-  <% } %>
-</div>
 
   </div>
 
