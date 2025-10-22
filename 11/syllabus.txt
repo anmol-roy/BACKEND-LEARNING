@@ -1,0 +1,5 @@
+mongodb installation
+mongoDB connection
+schema
+models
+crud
