@@ -1,0 +1,13 @@
+user ko profile dene se pahle ye check karna hota hai
+ke user hai kon - Authentiction
+
+authorized to perform some tasks which are only allowed to be executed
+by the admin 
+
+
+cookie and session->
+
+things to learn->
+cookie set karna.
+bcrypt kaise use karte hai for password encryption and decryption
+jwt kya hai and jwt mei data kaise store karei and bahr nikalein
