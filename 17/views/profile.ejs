@@ -52,7 +52,7 @@
         <a href="/like/<%= post._id%>">
             <%= user && post.likes.includes(user._id) ? 'Unlike' : 'Like' %>
         </a>
-        <!-- <a href="#">Edit</a> -->
+  <a href="/edit/<%= post._id %>">Edit</a>   <!-- ✅ correct -->
       </div>
     </div>
   <% }) %>

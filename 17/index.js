@@ -54,6 +54,21 @@ app.get("/like/:postId", isLoggedIn, async (req, res) => {
   res.redirect('/profile');
 });
 
+app.get("/edit/:postId", isLoggedIn, async (req, res) => {
+  const post = await postModel.findById(req.params.postId).populate('user');
+  res.render('edit', { post });
+});
+
+app.post("/update/:id", isLoggedIn, async (req, res) => {
+  await postModel.findOneAndUpdate(
+    { _id: req.params.id },
+    { content: req.body.content },
+    { new: true } // returns the updated document
+  );
+  res.redirect('/profile');
+});
+
+
 
 
 app.post('/post', isLoggedIn, async (req, res) => {
