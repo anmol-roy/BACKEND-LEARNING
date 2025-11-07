@@ -1,0 +1,7 @@
+user can write post
+users can create 
+login and register
+logout 
+post creation
+post like
+post ddelete -> owner

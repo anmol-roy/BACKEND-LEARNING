@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col items-center p-6">
+
+  <!-- Header -->
+  <div class="w-full flex justify-between items-center mb-8 max-w-3xl">
+    <h1 class="text-2xl font-bold text-blue-600">User Profile</h1>
+    <a href="/logout" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition">Logout</a>
+  </div>
+
+  <!-- Profile Info -->
+  <div class="bg-white shadow-md rounded-lg p-6 w-full max-w-3xl">
+    <p class="text-gray-700 text-lg mb-2">Welcome to your profile page!</p>
+    <p class="text-gray-900 font-medium">Name: <span class="text-blue-600"><%= user.name %></span></p>
+    <p class="text-gray-900 font-medium">Email: <span class="text-blue-600"><%= user.email %></span></p>
+  </div>
+
+  <!-- Create Post -->
+  <div class="bg-white shadow-md rounded-lg p-6 w-full max-w-3xl mt-6">
+    <h5 class="text-lg font-semibold mb-3">You can create a post</h5>
+
+    <form action="/post" method="post" class="flex flex-col gap-4">
+      <textarea
+        class="w-full h-28 resize-none border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        name="content" placeholder="What’s on your mind?"></textarea>
+      <input
+        value="Create New Post"
+        type="submit"
+        class="bg-blue-600 text-white font-semibold py-2 rounded-md hover:bg-blue-700 transition cursor-pointer" />
+    </form>
+  </div>
+
+  <div class="posts mt-20">
+  <h3 class="text-xl font-semibold mb-4">Your Posts</h3>
+
+  <% if (posts.length === 0) { %>
+    <p class="text-gray-500">You haven't created any posts yet.</p>
+  <% } %>
+
+  <% posts.forEach(post => { %>
+    <div class="bg-white shadow-md p-4 rounded-md mb-4">
+      <h4 class="text-blue-600 font-medium"><%= post.user.email %></h4>
+      <p class="mt-2"><%= post.content %></p>
+      <div class="flex gap-4 mt-3 text-sm text-gray-500">
+        <small><%= post.likes.length %> Likes</small>
+        <a href="/like/<%= post._id%>">
+            <%= user && post.likes.includes(user._id) ? 'Unlike' : 'Like' %>
+        </a>
+        <!-- <a href="#">Edit</a> -->
+      </div>
+    </div>
+  <% }) %>
+</div>
+
+
+
+</body>
+</html>
